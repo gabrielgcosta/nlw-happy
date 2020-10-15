@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+:root{
+  font-size: 62.5%; /*62.5% equivale a 10px*/
+}
+
+body{
+  height: 100vh;
+  color: white;
+}
+
+body, input, button, textarea{
+  /*
+  font-weight: 400;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1;
+  */
+
+  /*Nessa linha conseguimos agrupar todas as linhas anteriores*/
+  font: 400 1.8rem/1 'Nunito', sans-serif;
+  /*Unidade de medida rem faz um calculo deixando o tamnho com um percentual do tamanho do elemento root
+    que no caso é o html, para que dessa forma o site fique responsivo
+
+    OBS: A unidade em faz o calculo com base no elemento pai ao elemento em que está
+  */
+}
+
+/* Atrasa a animação em cada seção para dar o efeito de uma aparecendo antes da outra*/
+#logo{
+  animation-delay: 50ms;
+}
+
+#location{
+  animation-delay: 100ms;
+}
+
+main h1{
+  animation-delay: 150ms;
+}
+
+.visit p{
+  animation-delay: 200ms;
+}
+
+.visit a {
+  animation-delay: 250ms;
+}

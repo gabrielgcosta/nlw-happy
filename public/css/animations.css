@@ -1,0 +1,23 @@
+@keyframes up {
+  from{
+    opacity: 0;
+    /*No translate o valor positivo representa parte de baixo, então no caso
+      dessa função, o conteudo se mexeria de baixo para cima no eixo Y
+    */
+    transform: translateY(16px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-up{
+  animation-name: up;
+  animation-duration: 300ms;
+
+  /*Essa ultima linha permite que o elemento ao qual a animação foi aplicada
+    permaneça com os atributos definidos no 'to' da animação
+  */
+  animation-fill-mode: backwards;
+}
