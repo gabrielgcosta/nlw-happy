@@ -10,7 +10,12 @@
 
 #container{
   margin: auto;
-  width: 90%;
+
+  /*Nesse caso o css aplica o menor width entre os dois, seja 90% da tela, 
+    ou 112rem (1200px). Ou seja, quando a tela for menor do que 1200px, ele
+    aplica 90% da tela, quando for maior, passa a aplicar apenas 1200px
+  */
+  width: min(90%, 112rem);
 }
 
 .location, h1, .visit p{
@@ -37,4 +42,68 @@
 .visit a:hover{
   background: #96feff;
   
+}
+
+/*  --  DESKTOP VERSION  --  */
+@media (min-width: 760px){
+
+  #container{
+    /* shorthand background: image repeat position / size */
+    background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+    padding: 5rem 2rem;
+    /*
+    Da forma abaixo conseguimos definir uma posição para o background, sendo que
+    o primeiro valor leva em consideração o eixo y e o segundo o eixo x. Caso apenas
+    um valor seja colocado, irá considerar os dois eixos
+    background-position: bottom center;
+    */
+  }
+
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .location, h1, .visit p {
+    height: initial;
+    text-align: initial;
+  }
+
+  .location{
+    text-align: right;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+
+  main h1{
+    /*a função clamp permite que coloquemos um limite no tamanho, onde o primeiro
+      valor é o tamanho minimo, o segundo é o tamanho desejado, e o terceiro é o
+      tamanho máximo
+    */
+    font-size: clamp(4rem, 8vw, 8.4rem);
+    font-weight: bold;
+    line-height: .88;
+
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
+
+    width: min(300px, 80%);
+  }
+
+  .visit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .visit p{
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem);
+  }
+
+  .visit a{
+    margin: initial;
+  }
+
 }
